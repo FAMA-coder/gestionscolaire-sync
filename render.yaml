@@ -1,0 +1,24 @@
+# Gestion Scolaire — Blueprint Render
+# Crée un Web Service Node/Express pour la synchronisation et la gestion à distance.
+#
+# Utilisation :
+#   1. Poussez ce dossier (server-node) dans un dépôt Git, OU
+#   2. Utilisez "New Web Service" sur Render → connectez le dépôt.
+#      Au besoin remplacez "buildPath" / "dockerfilePath" ci-dessous.
+
+services:
+  - type: web
+    name: gestionscolaire-sync
+    runtime: docker
+    plan: free            # "free" ou "starter" (persistance disque : starter+)
+    dockerfilePath: ./Dockerfile
+    dockerContext: .
+    envVars:
+      - key: PORT
+        value: 8080
+    healthCheckPath: /api/health
+    # Persistance du registre (pensez à un plan payant pour un stockage stable)
+    # disk:
+    #   name: sync-data
+    #   mountPath: /app/data
+    #   sizeGB: 1

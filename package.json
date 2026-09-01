@@ -1,0 +1,17 @@
+{
+  "name": "gestionscolaire-sync-server",
+  "version": "1.0.0",
+  "description": "Serveur de synchronisation et de gestion à distance pour Gestion Scolaire (Wan).",
+  "main": "server.js",
+  "type": "commonjs",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "engines": {
+    "node": ">=16"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.19.2"
+  }
+}
